@@ -1,54 +1,29 @@
-# React + TypeScript + Vite
+# Todo List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект Todo List с использованием API: https://cms.laurence.host/api
 
-Currently, two official plugins are available:
+## Описание:
+Приложение реализовано на React с использованием TypeScript, Zustand для управления состоянием. Оно позволяет добавлять, редактировать, удалять задачи, изменять их статус, фильтровать задачи. Также приложение поддерживает скроллинг. Уникальность заключается в использовании анимаций через Framer Motion: анимация букв в заголовке(при первичном запуске приложения и при нажатии на буквы), плавное появление/удаление задач, анимация завершения задачи в виде салюта, пометки задачи как избранной(звездочка сияет), а такжек увеличение карточки задачи при наведении. Для UI используется Ant Design, а для стилизации — Styled Components. API взаимодействие реализовано через Axios, а избранные задачи сохраняются в localStorage. Архитектура приложения модульная, с четким разделением компонентов придерживаясь паттернов архитектуры Frontend-приложений, что упрощает поддержку и масштабирование.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Стек:
+- React + TypeScript
+- Zustand (State manager)
+- Ant Design + Styled Components
+- Vite + Framer Motion
 
-## Expanding the ESLint configuration
+## Функционал:
+- Добавление задачи
+- Удаление задачи
+- Получение списка всех задач
+- Изменение статуса (выполнено / активно)
+- Infinite Scroll
+- Избранное (сохраняется в localStorage, отображаться даже после обновления страницы)
+- Фильтрация задач
+- Редактирование задач
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Установка и запуск:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
+npm start
 ```
