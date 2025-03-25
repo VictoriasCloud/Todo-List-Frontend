@@ -15,6 +15,7 @@ export const StatusToggleButton = ({ status, onToggle }: Props) => {
       size="small"
       icon={isDone ? <ReloadOutlined /> : <CheckCircleOutlined />}
       onClick={onToggle}
+      aria-label={isDone ? 'Вернуть задачу' : 'Завершить задачу'}
     >
       {isDone ? 'Вернуть' : 'Завершить'}
     </Button>

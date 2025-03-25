@@ -19,13 +19,20 @@ export const AddTodoCard = ({ onCancel }: Props) => {
       message.warning('Заполните все поля');
       return;
     }
-
-    setLoading(true);
-    await addTodo({ title, description, status: 'active' });
-    setTitle('');
-    setDescription('');
-    setLoading(false);
-    onCancel();
+    try {
+      setLoading(true);
+      await addTodo({ title, description, status: 'active' });
+  
+      console.log('Задача успешно добавлена'); 
+  
+      setTitle('');
+      setDescription('');
+      onCancel(); 
+    } catch (error) {
+      console.error('Ошибка при добавлении задачи:', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

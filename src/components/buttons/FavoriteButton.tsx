@@ -11,6 +11,7 @@ export const FavoriteButton = ({ isFavorite, onToggle }: Props) => (
   <Button
     type="text"
     onClick={onToggle}
+    aria-label="Избранное"
     icon={
       <motion.span
         initial={false}

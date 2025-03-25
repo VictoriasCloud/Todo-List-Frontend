@@ -19,8 +19,19 @@ export const ActionButtonsGroup = ({
   return (
     <Space>
       <FavoriteButton isFavorite={isFavorite} onToggle={onToggleFavorite} />
-      <Button type="text" icon={<EditOutlined />} onClick={onEdit} />
-      <Button type="text" icon={<DeleteOutlined />} danger onClick={onDelete} />
+      <Button
+        type="text"
+        icon={<EditOutlined />}
+        onClick={onEdit}
+        aria-label="Редактировать"
+      />
+      <Button
+        type="text"
+        icon={<DeleteOutlined />}
+        danger
+        onClick={onDelete}
+        aria-label="Удалить"
+      />    
     </Space>
   );
 };
